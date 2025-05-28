@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inscription</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #f4f6f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .form-container {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 100%;
+      padding: 30px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #555;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .subscription-options {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .subscription-options label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: normal;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .file-upload {
+      border: 1px dashed #ccc;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: center;
+      background: #fafafa;
+      transition: background 0.3s;
+    }
+
+    .file-upload:hover {
+      background: #f0f0f0;
+    }
+
+    .file-upload input[type="file"] {
+      display: none;
+    }
+
+    .custom-file-button {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #007bff;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+
+    .custom-file-button:hover {
+      background-color: #0056b3;
+    }
+
+    button {
+      width: 100%;
+      background-color: #007bff;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    @media (max-width: 600px) {
+      .subscription-options {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-container">
+  <h2>Inscription</h2>
+  <form action="#" method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+      <label for="name">Nom et Prénom</label>
+      <input type="text" id="name" name="name" placeholder="Non et prénom" required />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="exemple@gmail.com" required />
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Téléphone</label>
+      <input type="tel" id="phone" name="phone" placeholder="+228 99000000" required />
+    </div>
+
+    <div class="form-group">
+      <label for="age">Âge</label>
+      <input type="number" id="age" name="age" placeholder="âge" min="12" max="100" required />
+    </div>
+
+    <div class="form-group">
+      <label>Type d'abonnement</label>
+      <div class="subscription-options">
+        <label><input type="radio" name="subscription" value="monthly" checked /> Mensuel</label>
+        <label><input type="radio" name="subscription" value="yearly" /> Annuel</label>
+      </div>
+    </div>
+
+    <!-- PHOTO EN DERNIER -->
+    <div class="form-group">
+      <label>Photo de profil</label>
+      <div class="file-upload">
+        <input type="file" id="photo" name="photo" accept="image/*" />
+        <label for="photo" class="custom-file-button">Choisir une photo</label>
+        <p style="font-size:12px; color:#888; margin-top:6px;">Formats acceptés : JPG, PNG</p>
+      </div>
+    </div>
+
+    <button type="submit" class="btn">S'inscrire</button>
+  </form>
+</div>
+
+</body>
+</html>

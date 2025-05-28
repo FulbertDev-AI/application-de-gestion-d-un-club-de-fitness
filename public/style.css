@@ -1,0 +1,564 @@
+
+    :root {
+      --bg-color: #F2F2F2;
+      --primary-color: #2c2c2c;
+      --text-color: #f2f2f2;
+      --hover-color: #444;
+      /* --accent-color: #c5141400; */
+      --card-bg: #B2BEB5;
+      --border-radius: 15px;
+      --button-hover: blue;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    nav {
+      background-color: var(--primary-color);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: fixed;
+      margin-top: 0;
+      width: 100%;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: blue;
+      font-size: 25px;
+    }
+
+    .menu {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #f2f2f2;
+      transition: color 0.3s ease;
+      font-size: 25px;
+      font-weight: 15px;
+    }
+
+    .menu a:hover {
+      color:blue;
+    }
+
+    .profile-icon {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .profile-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: var(--text-color);
+      transition: fill 0.3s ease;
+    }
+
+    .profile-icon:hover svg {
+      fill: var(--accent-color);
+    }
+
+    .dropdown {
+      position: absolute;
+      right: 0;
+      top: calc(100% + 0.5rem);
+      background-color: var(--primary-color);
+      border-radius: 6px;
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+      z-index: 10;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .profile-icon:hover .dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 0.75rem 1.25rem;
+      color: var(--text-color);
+      white-space: nowrap;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .dropdown a:hover {
+      background-color: var(--hover-color);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .menu {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+        background-color: var(--primary-color);
+        padding: 1rem 0;
+        display: none;
+      }
+
+      .menu.active {
+        display: flex;
+      }
+
+        .toggle-btn {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--text-color);
+        font-size: 1.5rem;
+        cursor: pointer;
+        }
+    }
+
+    @media (min-width: 769px) {
+        .toggle-btn {
+        display: none;
+    }
+    }
+
+
+    /* SECTION HERO */
+
+
+
+    .hero {
+      position: relative;
+      height: 100vh;
+      background: url('images/salle2.jpg') no-repeat center center/cover;
+      filter: brightness(0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      padding: 2rem;
+      margin-bottom: 50px;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: 50px;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 28px;
+      margin-bottom: 2rem;
+      color: #F2F2F2;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #fff;
+      background-color:#007bff;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: var(--button-hover);
+      cursor: pointer;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+
+    /* SECTION DISCIPLINE */
+
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .disciplines {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 50px;
+    }
+
+    .discipline-card {
+      background-color: #fff;
+      border-radius: var(--border-radius);
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin: 20px;
+    }
+
+    .discipline-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    .discipline-icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #007bff;
+      border-radius: 50%;
+      color: #007bff;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .discipline-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #000;
+    }
+
+    .discipline-desc {
+      font-size: 0.9rem;
+      color: #000;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+
+      /* SECTION COACH */
+
+
+
+    h2 {
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 15px;
+      color: black;
+    }
+
+    .coaches {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 50px;
+    }
+
+    .coach-card {
+      background-color: #fff;
+      border-radius:var(--border-radius);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .coach-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    .coach-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .coach-info {
+      padding: 1rem;
+    }
+
+    .coach-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+      color: #2c2c2c;
+    }
+
+    .coach-speciality {
+      font-size: 1.2rem;
+      color: #000;
+      margin-bottom: 0.7rem;
+    }
+
+    .coach-bio {
+      font-size: 0.85rem;
+      color: #000;
+    }
+
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+
+
+    /* SECTION EQUIPEMENT */
+
+
+    
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 4rem;
+      color: black;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 50px;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1rem;
+    }
+
+    .card-content h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #000;
+    }
+
+    .card-content p {
+      font-size: 0.95rem;
+      color: #000;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+
+    /* SECTION ABONNEMENT */
+
+
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: black;
+    }
+
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 50px;
+    }
+
+    .price-card {
+      background-color: #fff;
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .price-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .price-title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: blue;
+    }
+
+    .price-age {
+      font-size: 0.9rem;
+      color: #000;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .price-value {
+      font-size: 2rem;
+      color: #000;
+      margin-bottom: 1rem;
+    }
+
+    .price-desc {
+      font-size: 0.9rem;
+      color: #000;
+      margin-bottom: 1.5rem;
+    }
+
+    .price-button {
+      display: inline-block;
+      padding: 0.75rem 1.25rem;
+      background-color: blue;
+      color: #fff;
+      text-decoration: none;
+      border-radius: var(--border-radius);
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+    }
+
+    .price-button:hover {
+      background-color: #007bff;
+    }
+
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* SECTION CONTACT */
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: black;
+    }
+
+    .contact-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #eeeaf0;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      font-size: 1.5rem;
+      color: #000;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      padding: 0.75rem 1rem;
+      border: none;
+      border-radius: 15px;
+      background-color: var(--input-bg);
+      color: #000;
+      font-size: 1rem;
+      resize: vertical;
+    }
+
+    textarea {
+      min-height: 120px;
+    }
+
+    button[type="submit"] {
+      background-color: blue;
+      color: white;
+      border: none;
+      padding: 0.85rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color:#007bff;
+    }
+
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .contact-container {
+        padding: 1.5rem;
+      }
+    }

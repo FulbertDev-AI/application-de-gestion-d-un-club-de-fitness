@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fitzone - Dashboard Admin</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- AdminLTE -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap4.min.css">
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="index.html" class="nav-link">Accueil</a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <div class="brand-link">
+      <span class="brand-text font-weight-light">Fitzone Admin</span>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>Membres</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-user-tie"></i>
+              <p>Coachs</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-calendar-alt"></i>
+              <p>Planning</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-file-invoice-dollar"></i>
+              <p>Abonnements</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-dumbbell"></i>
+              <p>Équipements</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Tableau de bord</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+              <li class="breadcrumb-item active">Dashboard</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3 id="total-membres">0</h3>
+                <p>Membres actifs</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <a href="#" class="small-box-footer">Plus d'infos <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3 id="total-coachs">0</h3>
+                <p>Coachs actifs</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-user-tie"></i>
+              </div>
+              <a href="#" class="small-box-footer">Plus d'infos <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3 id="revenue-mois">0</h3>
+                <p>Revenu ce mois</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-dollar-sign"></i>
+              </div>
+              <a href="#" class="small-box-footer">Plus d'infos <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3 id="impayes">0</h3>
+                <p>Impayés ce mois</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-exclamation-circle"></i>
+              </div>
+              <a href="#" class="small-box-footer">Plus d'infos <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+        </div>
+        <!-- /.row -->
+
+        <!-- Membres en miniature -->
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Derniers membres inscrits</h3>
+                <div class="card-tools">
+                  <div class="input-group input-group-sm" style="width: 150px;">
+                    <input type="text" name="table_search" class="form-control float-right" placeholder="Recherche">
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-default">
+                        <i class="fas fa-search"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <div class="row p-3" id="membres-miniature">
+                  <!-- Les membres seront chargés ici via JS -->
+                </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+
+        <!-- Liste des coachs avec impression -->
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Liste des coachs</h3>
+                <div class="card-tools">
+                  <button class="btn btn-primary btn-sm" onclick="printCoachs()">
+                    <i class="fas fa-print"></i> Imprimer
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="coachsTable" class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>Photo</th>
+                      <th>Nom</th>
+                      <th>Spécialité</th>
+                      <th>Email</th>
+                      <th>Téléphone</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Les coachs seront chargés ici via JS -->
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+
+        <!-- Liste des abonnements avec filtre -->
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Abonnements</h3>
+                <div class="card-tools">
+                  <select class="form-control form-control-sm" id="filtre-abonnement">
+                    <option value="all">Tous les abonnements</option>
+                    <option value="mensuel">Abonnements mensuels</option>
+                    <option value="annuel">Abonnements annuels</option>
+                  </select>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="abonnementsTable" class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>Membre</th>
+                      <th>Type</th>
+                      <th>Date début</th>
+                      <th>Date fin</th>
+                      <th>Prix</th>
+                      <th>Statut</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Les abonnements seront chargés ici via JS -->
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+
+        <!-- Liste des impayés -->
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Impayés du mois</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="impayesTable" class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>Membre</th>
+                      <th>Abonnement</th>
+                      <th>Montant</th>
+                      <th>Date échéance</th>
+                      <th>Jours retard</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Les impayés seront chargés ici via JS -->
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2023 <a href="#">Fitzone</a>.</strong>
+    Tous droits réservés.
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
+<!-- DataTables -->
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap4.min.js"></script>
+<!-- ChartJS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  $(document).ready(function() {
+    // Initialiser les DataTables
+    $('#coachsTable').DataTable();
+    $('#abonnementsTable').DataTable();
+    $('#impayesTable').DataTable();
+
+    // Simuler le chargement des données (remplacer par vos appels AJAX)
+    loadStats();
+    loadMembresMiniature();
+    loadCoachs();
+    loadAbonnements();
+    loadImpayes();
+  });
+
+  function loadStats() {
+    // Simuler des données (remplacer par un appel AJAX)
+    $('#total-membres').text('154');
+    $('#total-coachs').text('8');
+    $('#revenue-mois').text('6.240.000 FCFA');
+    $('#impayes').text('12');
+  }
+
+  function loadMembresMiniature() {
+    const membres = [
+      { id: 1, nom: 'Dupont', prenom: 'Jean', photo: 'https://randomuser.me/api/portraits/men/1.jpg' },
+      { id: 2, nom: 'Martin', prenom: 'Sophie', photo: 'https://randomuser.me/api/portraits/women/1.jpg' },
+      { id: 3, nom: 'Bernard', prenom: 'Pierre', photo: 'https://randomuser.me/api/portraits/men/2.jpg' },
+      { id: 4, nom: 'Petit', prenom: 'Marie', photo: 'https://randomuser.me/api/portraits/women/2.jpg' },
+      { id: 5, nom: 'Durand', prenom: 'Luc', photo: 'https://randomuser.me/api/portraits/men/3.jpg' },
+      { id: 6, nom: 'Leroy', prenom: 'Julie', photo: 'https://randomuser.me/api/portraits/women/3.jpg' }
+    ];
+
+    let html = '';
+    membres.forEach(membre => {
+      html += `
+        <div class="col-md-2 col-sm-4 col-6 text-center mb-3">
+          <div class="card">
+            <img src="${membre.photo}" class="card-img-top rounded-circle p-2" style="width: 100px; height: 100px; object-fit: cover; margin: 0 auto;">
+            <div class="card-body p-2">
+              <h6 class="card-title mb-0">${membre.prenom} ${membre.nom}</h6>
+              <a href="#" class="btn btn-sm btn-info mt-2">Profil</a>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+    $('#membres-miniature').html(html);
+  }
+
+  function loadCoachs() {
+    const coachs = [
+      { id: 1, nom: 'Dupont', prenom: 'Jean', photo: 'https://randomuser.me/api/portraits/men/10.jpg', specialite: 'Musculation', email: 'jean@fitzone.com', tel: '06 12 34 56 78' },
+      { id: 2, nom: 'Martin', prenom: 'Sophie', photo: 'https://randomuser.me/api/portraits/women/10.jpg', specialite: 'Cardio', email: 'sophie@fitzone.com', tel: '06 23 45 67 89' },
+      { id: 3, nom: 'Bernard', prenom: 'Pierre', photo: 'https://randomuser.me/api/portraits/men/11.jpg', specialite: 'CrossFit', email: 'pierre@fitzone.com', tel: '06 34 56 78 90' }
+    ];
+
+    let html = '';
+    coachs.forEach(coach => {
+      html += `
+        <tr>
+          <td><img src="${coach.photo}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;"></td>
+          <td>${coach.prenom} ${coach.nom}</td>
+          <td>${coach.specialite}</td>
+          <td>${coach.email}</td>
+          <td>${coach.tel}</td>
+          <td>
+            <button class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></button>
+            <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+          </td>
+        </tr>
+      `;
+    });
+    $('#coachsTable tbody').html(html);
+  }
+
+  function loadAbonnements() {
+    const abonnements = [
+      { membre: 'Jean Dupont', type: 'Adulte', debut: '01/10/2023', fin: '01/11/2023', prix: '40.000 FCFA', statut: 'Actif' },
+      { membre: 'Sophie Martin', type: 'Enfant', debut: '15/09/2023', fin: '15/10/2023', prix: '20.000 FCFA', statut: 'Expiré' },
+      { membre: 'Pierre Bernard', type: 'Premium', debut: '01/09/2023', fin: '01/12/2023', prix: '80.000 FCFA', statut: 'Actif' },
+      { membre: 'Marie Petit', type: 'Famille', debut: '01/10/2023', fin: '01/11/2023', prix: '90.000 FCFA', statut: 'Actif' }
+    ];
+
+    let html = '';
+    abonnements.forEach(abonnement => {
+      html += `
+        <tr>
+          <td>${abonnement.membre}</td>
+          <td>${abonnement.type}</td>
+          <td>${abonnement.debut}</td>
+          <td>${abonnement.fin}</td>
+          <td>${abonnement.prix}</td>
+          <td><span class="badge ${abonnement.statut === 'Actif' ? 'bg-success' : 'bg-warning'}">${abonnement.statut}</span></td>
+        </tr>
+      `;
+    });
+    $('#abonnementsTable tbody').html(html);
+  }
+
+  function loadImpayes() {
+    const impayes = [
+      { membre: 'Luc Durand', abonnement: 'Adulte', montant: '40.000 FCFA', echeance: '05/10/2023', retard: '5 jours' },
+      { membre: 'Julie Leroy', abonnement: 'Premium', montant: '80.000 FCFA', echeance: '10/10/2023', retard: '0 jour' },
+      { membre: 'Thomas Moreau', abonnement: 'Famille', montant: '90.000 FCFA', echeance: '01/10/2023', retard: '9 jours' }
+    ];
+
+    let html = '';
+    impayes.forEach(impaye => {
+      html += `
+        <tr>
+          <td>${impaye.membre}</td>
+          <td>${impaye.abonnement}</td>
+          <td>${impaye.montant}</td>
+          <td>${impaye.echeance}</td>
+          <td><span class="badge ${impaye.retard.includes('0') ? 'bg-warning' : 'bg-danger'}">${impaye.retard}</span></td>
+          <td>
+            <button class="btn btn-sm btn-success"><i class="fas fa-check"></i> Paiement</button>
+            <button class="btn btn-sm btn-info"><i class="fas fa-envelope"></i> Rappel</button>
+          </td>
+        </tr>
+      `;
+    });
+    $('#impayesTable tbody').html(html);
+  }
+
+  function printCoachs() {
+    const printWindow = window.open('', '_blank');
+    printWindow.document.write(`
+      <html>
+        <head>
+          <title>Liste des coachs - Fitzone</title>
+          <style>
+            body { font-family: Arial; }
+            h1 { color: #333; text-align: center; }
+            table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+          </style>
+        </head>
+        <body>
+          <h1>Liste des coachs - Fitzone</h1>
+          <table>
+            <thead>
+              <tr>
+                <th>Nom</th>
+                <th>Spécialité</th>
+                <th>Email</th>
+                <th>Téléphone</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${$('#coachsTable tbody').html().replace(/<img[^>]*>/g, '').replace(/<button[^>]*>.*?<\/button>/g, '')}
+            </tbody>
+          </table>
+          <p style="text-align: right; margin-top: 30px;">Imprimé le ${new Date().toLocaleDateString()}</p>
+        </body>
+      </html>
+    `);
+    printWindow.document.close();
+    printWindow.print();
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Connexion</title>
+  <link rel="stylesheet" href="login.css">
+
+</head>
+<body>
+
+<div class="form-container">
+  <h2>Se connecter</h2>
+  <div id="error-message" class="error-message"></div>
+  <form id="login-form">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="exemple@gmail.com" required />
+    </div>
+
+    <div class="form-group">
+      <label for="password">Mot de passe</label>
+      <input type="password" id="password" name="password" placeholder="••••••••" required />
+    </div>
+
+    <button type="submit">Se connecter</button>
+
+    <div class="redirect-link">
+      Pas encore inscrit ? <br/>
+      <a href="register.html">Créer un compte</a>
+    </div>
+  </form>
+</div>
+
+<script>
+  // Simuler une vérification d'utilisateur (tu peux remplacer cela par un appel API ou PHP)
+  document.getElementById('login-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
+
+    // Simule une base d'utilisateurs (à remplacer par ton backend PHP)
+    const registeredUsers = [
+      { email: 'test@example.com', password: '123456' }
+    ];
+
+    const errorDiv = document.getElementById('error-message');
+    errorDiv.textContent = '';
+
+    const user = registeredUsers.find(u => u.email === email);
+
+    if (!user) {
+      errorDiv.textContent = "Cet email n'est pas inscrit.";
+      return;
+    }
+
+    if (user.password !== password) {
+      errorDiv.textContent = "Mot de passe incorrect.";
+      return;
+    }
+
+    // Redirection après succès
+    alert("Connecté avec succès !");
+    // window.location.href = 'dashboard.html'; // Page protégée
+  });
+</script>
+
+</body>
+</html>
