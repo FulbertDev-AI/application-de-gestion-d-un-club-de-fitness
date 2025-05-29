@@ -282,10 +282,10 @@
   <h2>Contactez-Nous</h2>
   <section id="contact">
   <div class="contact-container">
-    <form class="contact-form" id="formContact" onsubmit="setTimeout(viderFormulaire, 100);">
+    <form class="contact-form" id="formContact" onsubmit="setTimeout(viderFormulaire, 100);" action="contact.php" method="post">
       <div class="form-group">
-        <label for="prenom">Nom</label>
-        <input type="text" id="prenom" name="prenom" placeholder="Votre nom" required />
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" name="nom" placeholder="Votre nom" required />
       </div>
 
       <div class="form-group">
@@ -304,10 +304,10 @@
   </section>
 
   <!-- Footer -->
-  <footer class="main-footer">
+  <!-- <footer class="main-footer">
     <strong>Copyright &copy; 2023 <a href="#">Fitzone</a>.</strong>
     Tous droits réservés.
-  </footer>
+  </footer> -->
 
 
   <script>
